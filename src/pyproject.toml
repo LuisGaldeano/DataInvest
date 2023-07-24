@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "datainvest-backend"
+version = "0.1.0"
+description = ""
+authors = ["luisgaldeano <lpgaldeano@gmail.com>"]
+readme = "README.md"
+packages = [{include = "datainvest_backend"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.3"
+djangorestframework = "^3.14.0"
+psycopg2-binary = "^2.9.6"
+django-cors-headers = "^4.2.0"
+yfinance = "^0.2.26"
+django-model-utils = "^4.3.1"
+django-apscheduler = "^0.6.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
