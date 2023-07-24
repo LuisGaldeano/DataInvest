@@ -1,6 +1,8 @@
 from django.db import models
 from ...core.models.abstract import TimeStampedUUIDModel
 from django.utils.translation import gettext_lazy as _
+from .etf_asset_type import AssetType
+from .etf_underlying import Underlying
 
 
 class IsinETF(TimeStampedUUIDModel):
@@ -28,14 +30,6 @@ class IsinETF(TimeStampedUUIDModel):
         verbose_name=_("Yahoo Finance Ticker"),
         help_text=_("Yahoo Finance Ticker")
     )
-    asset_type = models.CharField(
-        blank=True,
-        null=True,
-        unique=False,
-        default=False,
-        verbose_name=_("Asset Type"),
-        help_text=_("Asset Type")
-    )
     ter = models.FloatField(
         blank=True,
         null=True,
@@ -44,6 +38,9 @@ class IsinETF(TimeStampedUUIDModel):
         verbose_name=_("TER"),
         help_text=_("TER")
     )
+
+    asset_type = models.ForeignKey(AssetType, on_delete=models.CASCADE, to_field='uuid')
+    underlying = models.ForeignKey(Underlying, on_delete=models.CASCADE, to_field='uuid')
 
     class Meta:
         verbose_name = _('ETF ISIN')
