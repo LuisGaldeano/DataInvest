@@ -3,4 +3,5 @@
 src/backend/settings/settings.py
 .env
 src/apps/etf/migrations/0001_initial.py
-src/apps/etf/migrations/0002_remove_financialdataetf_totalassets.py
+src/apps/etf/migrations/0002_alter_assettype_options_alter_underlying_options.py
+src/apps/etf/migrations/0003_alter_assettype_asset_type.py
